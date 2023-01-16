@@ -50,10 +50,10 @@ void serialSend(byte command[], int sendCount);
 void redirect(String uri);
 
 //MQTT Settings
-String mqttServer = "192.168.1.99";
+String mqttServer = "<your-mqtt-server-ip>";
 String mqttPort = "1883";
-String mqttUser = "admin";
-String mqttPW = "admin";
+String mqttUser = "<your-mqtt-username>";
+String mqttPW = "<your-mqtt-password>";
 
 //serial Input
 char serInCommand[39];
@@ -442,10 +442,13 @@ void setup() {
 }
 
 void loop() {
+  static unsigned long lastMQTTConnection = 0;
   if (WiFi.status() == WL_CONNECTED) {
     //The following things can only be handled if wifi is connected
     ArduinoOTA.handle();
-    if (!mqttClient.connected()) {
+
+    if (!mqttClient.connected() && millis() - lastMQTTConnection >= 30000) {
+      lastMQTTConnection = millis();
       mqttConnect();
     }
     mqttClient.loop();

@@ -21,7 +21,7 @@ Didn't need to convert voltage as the NodeMCU has an onboard voltage regulator.
 ### Wiring Explaination
 
 The wiring within the coffee machine is as shown in the picture:
-![Wiring](https://github.com/walthowd/Philips-ep3200-ha/blob/master/images/wiring.png)
+![Wiring](https://github.com/walthowd/Philips-ep3200-ha/blob/main/images/wiring.png)
 
 > [!Warning] 
 > You need a voltage regulator if your ESP8266 can't handle more then 3V. 
@@ -53,4 +53,4 @@ The wiring within the coffee machine is as shown in the picture:
 ##### From NPN transistor, connections not alread referenced
 - [Emitter leg of NPN transistor](https://www.mouser.com/datasheet/2/308/1/BC338_D-1802398.pdf) to PIN2 on Molex 90325-0008 Connector that goes to display
 
-![NodeMCU](https://github.com/walthowd/Philips-ep3200-ha/blob/master/images/nodemcu.jpg)
+![NodeMCU](https://github.com/walthowd/Philips-ep3200-ha/blob/main/images/nodemcu.jpg)
